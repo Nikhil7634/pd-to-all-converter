@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF to All Converter</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav
+      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center text-3xl font-semibold whitespace-nowrap :text-white" style="font-weight: bold;"
+            >VEx</span
+          >
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            type="button"
+            class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
+          >
+            <a href="./about.html"> Get started </a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >About</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+              >
+                ALL PDF TOOLS
+                <svg
+                  style="margin-top: 5px"
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 -:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./pdftocsv.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO CSV</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pdftoexcel.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO EXCEL</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftohtml.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO HTML</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftojpg.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO JPG</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftojson.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO JSON</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftopng.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO PNG</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftocsv.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO TEXT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pdftoexcel.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO WORD</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftohtml.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO ZIP</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftohtml.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO WEBP</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div style="min-height: 100vh" class="bg-white">
+      <div class="relative isolate px-6 lg:px-8">
+        <div
+          class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            class="myanime relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div class="mx-auto pt-24 max-w-2xl">
+          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div
+              class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+            >
+              Announcing our next round of funding.
+              <a href="#" class="font-semibold text-indigo-600"
+                ><span class="absolute inset-0" aria-hidden="true"></span>Read
+                more <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+          <div class="text-center">
+            <h1
+              class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              All-in-One PDF Converter
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              Effortlessly convert your PDF files into various formats including
+              DOC, JPG, PNG, Excel, and PPT with our comprehensive conversion
+              tool.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6 herobutton">
+              <a
+                href="#toollists"
+                class="rounded-full bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                style="
+                  border: 1px solid black;
+                  padding: 12px 28px;
+                  background: black;
+                  color: white;
+                "
+                >Get started</a
+              >
+              <a
+                href="./about.html"
+                class="text-sm font-semibold leading-6 text-gray-900 rounded-full"
+                style="border: 1px solid black; padding: 8px 15px"
+                >Learn more <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div class="toollist" id="toollists">
+        <div class="singletools">
+          <a href="./pdftocsv.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO CSV</h2>
+
+            <p>
+              A PDF to CSV converter extracts tabular data from PDFs,
+              transforming it into CSV format for easy data handling and
+              analysis.
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftoexcel.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn.pixabay.com/photo/2021/01/30/12/15/excel-5963669_640.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO EXCEL</h2>
+
+            <p>
+              Convert PDFs to Excel effortlessly with high accuracy, preserving data integrity and formatting for seamless spreadsheet integration.
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="pdftohtml.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn.iconscout.com/icon/premium/png-256-thumb/html-2752158-2284975.png?f=webp&w=256"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO HTML</h2>
+
+            <p>
+              Convert PDFs to HTML effortlessly, preserving text, images, and formatting for a seamless web-ready document experience.
+
+
+
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftojpg.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/136/136524.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO JPG</h2>
+
+            <p>
+              Convert PDFs to high-quality JPG images quickly, preserving clarity and detail for easy use and sharing in various formats.
+
+
+
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftojson.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/136/136525.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO JSON</h2>
+
+            <p>
+              Convert PDFs to JSON format efficiently, extracting data into a structured, machine-readable format for seamless integration and analysis.
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftopng.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/29/29072.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO PNG</h2>
+
+            <p>
+              Transform PDFs into high-resolution PNG images, preserving quality and detail for versatile use and easy sharing in digital formats.
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftoword.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYQcLfUfqY6nAiwop5kkdkSvuKg0qzIc2TA&s"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO WORD</h2>
+
+            <p>
+              Convert PDFs to editable MS Word documents with precision, maintaining formatting and layout for seamless editing and content management.
+
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftoxml.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5105/5105250.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO XML</h2>
+
+            <p>
+              Convert PDFs to XML format accurately, extracting structured data for integration and analysis while preserving content integrity and layout.
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftozip.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/7817/7817526.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO ZIP</h2>
+
+            <p>
+              Convert PDFs to ZIP files quickly, compressing documents into a compact format for easier storage, sharing, and management.
+
+
+
+
+            </p>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftowebp.html">
+            <div class="imgbox">
+              <img
+                src="https://png.pngtree.com/png-clipart/20220612/original/pngtree-pdf-file-icon-png-png-image_7965915.png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/32/32213.png"
+                alt=""
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/8263/8263085.png"
+                alt=""
+              />
+            </div>
+            <h2>PDF TO WEBP</h2>
+
+            <p>
+              Convert PDFs to WebP images efficiently, ensuring high-quality visuals with reduced file size for optimal web performance and faster loading.
+
+
+
+
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex h-screen justify-center items-center :bg-slate-800">
+      <div
+        class="mx-auto mt-10 flex justify-center px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8"
+      >
+        <div class="text-center">
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-gray-900 :text-slate-200 sm:text-5xl md:text-6xl"
+          >
+            <span class="block xl:inline"
+              ><span class="mb-1 block"> Effortlessly Transform</span>
+              <span
+                class="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent"
+              >
+                PDFs into Multiple Formats
+              </span>
+            </span>
+            <div class="mt-2">
+              for Easy
+              <span class="relative mt-3 whitespace-nowrap text-blue-600"
+                ><svg
+                  aria-hidden="true"
+                  viewBox="0 0 418 42"
+                  class="absolute top-3/4 left-0 right-0 m-auto h-[0.58em] w-fit fill-pink-400/50"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"
+                  ></path>
+                </svg>
+                <span class="relative">Data Management.</span>
+              </span>
+            </div>
+          </h1>
+          <p
+            style="text-wrap: pretty"
+            class="mx-auto mt-3 max-w-xl text-lg text-gray-500 :text-slate-400 sm:mt-5 md:mt-5"
+          >
+            Effortlessly convert any document to PDF with our versatile
+            PDF-to-All Converter. This tool supports various formats, ensuring
+            seamless transitions for all your files. Whether you need to convert
+            text, images, or spreadsheets, our converter delivers high-quality
+            results quickly and efficiently. Simplify your document management
+            today!
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
+            <div class="rounded-md shadow">
+              <a
+                class="flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg"
+                href="#"
+                >Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <footer class="px-3 pt-4 lg:px-9 border-t-2 bg-gray-50">
+      <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="sm:col-span-2">
+          <a href="#" class="inline-flex items-center">
+            <span class="ml-2 text-4xl font-bold tracking-wide text-gray-800"
+              >VEx</span
+            >
+          </a>
+          <div class="mt-6 lg:max-w-xl">
+            <p class="text-sm text-gray-800">
+              Effortlessly convert any document to PDF with our versatile
+              PDF-to-All Converter. This tool supports various formats, ensuring
+              seamless transitions for all your files. Whether you need to
+              convert text, images, or spreadsheets, our converter delivers
+              high-quality results quickly and efficiently. Simplify your
+              document management today!
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 text-sm">
+          <p class="text-base font-bold tracking-wide text-gray-900">
+            Popular Courses
+          </p>
+          <a href="#">UPSC - Union Public Service Commission</a>
+          <a href="#">General Knowledge</a>
+          <a href="#">MBA</a>
+          <p class="text-base font-bold tracking-wide text-gray-900">
+            Popular Topics
+          </p>
+          <a href="#">Human Resource Management</a>
+          <a href="#">Operations Management</a>
+          <a href="#">Marketing Management</a>
+        </div>
+
+        <div>
+          <p class="text-base font-bold tracking-wide text-gray-900">
+            COMPANY IS ALSO AVAILABLE ON
+          </p>
+          <div class="flex items-center gap-1 px-2">
+            <a href="#" class="w-full min-w-xl">
+              <img
+                src="https://mcqmate.com/public/images/icons/playstore.svg"
+                alt="Playstore Button"
+                class="h-10"
+              />
+            </a>
+            <a
+              class="w-full min-w-xl"
+              href="https://www.youtube.com/channel/UCo8tEi6SrGFP8XG9O0ljFgA"
+            >
+              <img
+                src="https://mcqmate.com/public/images/icons/youtube.svg"
+                alt="Youtube Button"
+                class="h-28"
+              />
+            </a>
+          </div>
+          <p class="text-base font-bold tracking-wide text-gray-900">
+            Contacts
+          </p>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Email:</p>
+            <a href="#" title="send email">admin@company.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row"
+      >
+        <p class="text-sm text-gray-600">
+          © Copyright 2024 Valtara Explainer. All rights reserved.
+        </p>
+        <ul
+          class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"
+        >
+          <li>
+            <a
+              href="#"
+              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+              >Privacy &amp; Cookies Policy
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+              >Disclaimer
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    <script>
+      const fileInput = document.getElementById("fileInput");
+      const convertButton = document.getElementById("convertButton");
+      const output = document.getElementById("output");
+
+      let pdfDoc = null;
+
+      fileInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (file && file.type === "application/pdf") {
+          const fileReader = new FileReader();
+          fileReader.onload = async function () {
+            const typedarray = new Uint8Array(this.result);
+            pdfDoc = await pdfjsLib.getDocument(typedarray).promise;
+            convertButton.disabled = false;
+          };
+          fileReader.readAsArrayBuffer(file);
+        }
+      });
+
+      convertButton.addEventListener("click", async () => {
+        if (pdfDoc) {
+          output.innerHTML = "";
+          let excelData = [];
+
+          for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+            const page = await pdfDoc.getPage(pageNum);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items
+              .map((item) => item.str)
+              .join("\n");
+            excelData.push([`Page ${pageNum}`, pageText]);
+          }
+
+          const ws = XLSX.utils.aoa_to_sheet(excelData);
+          const wb = XLSX.utils.book_new();
+          XLSX.utils.book_append_sheet(wb, ws, "PDF to Excel");
+
+          // Export the Excel file
+          const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+          const blob = new Blob([wbout], { type: "application/octet-stream" });
+          const url = URL.createObjectURL(blob);
+
+          // Create a link to download the Excel file
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "converted.xlsx";
+          link.click();
+
+          // Clean up
+          URL.revokeObjectURL(url);
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <script src="./js/pdftocsv.js"></script>
+  </body>
+</html>

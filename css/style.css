@@ -1,0 +1,155 @@
+.myanime {
+  animation: animate 5s alternate infinite;
+}
+@keyframes animate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.toolsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.half-section {
+  width: 75%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+}
+.toolheading {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.description {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width: 710px) {
+  .toolsection {
+    gap: 50px;
+    padding-block: 30px;
+  }
+  .half-section {
+    width: 95%;
+  }
+}
+
+.toolbox {
+  padding-block: 40px;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  border: 1px solid black;
+  min-height: 200px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  padding-inline: 20px;
+}
+.downloadbutton {
+  border: 1px solid black;
+  padding: 12px 28px;
+  border-radius: 50px;
+}
+
+.mydrop {
+  width: 100% !important;
+  padding: 50px;
+}
+.mydrop ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+@media(max-width:567px) {
+  .mydrop{
+    padding: 0;
+    width: 100%;
+  }
+
+}
+.mydrop ul li a {
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.mydrop ul li a:hover {
+  color: black;
+}
+
+.toollist{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  grid-template-rows: auto;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 5%;
+}
+.singletools{
+  min-height: 220px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 20px;
+}
+.singletools a{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  z-index: 5;
+  cursor: pointer;
+}
+ 
+
+.singletools a img{
+  height: 40px;
+ 
+}
+.singletools a h2{
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.singletools a p{
+  font-size: 0.7rem;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.937);
+}
+
+.imgbox{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 568px) {
+  .herobutton{
+    width: 100%;
+    display: flex;
+    flex-flow: column !important;
+    gap: 20px;
+  }
+  .herobutton a{
+    width: 60%;
+  }
+}
