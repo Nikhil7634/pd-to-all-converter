@@ -115,6 +115,13 @@ html{
   margin-top: 30px;
   padding: 5%;
 }
+
+@media(min-width:1068px){
+  .toollist{
+    grid-template-columns: repeat(5,minmax(240px,1fr));
+  }
+
+}
 .singletools{
   min-height: 220px;
   background: white;
