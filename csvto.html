@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF to XML</title>
+    <title>CSV TO PDF</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
   </head>
   <body>
     <nav
@@ -281,16 +279,8 @@
   </nav>
 
     <div style="min-height: 100vh; overflow: hidden" class="bg-white">
-      <div
-        class="relative isolate px-6 pt-14 lg:px-8"
-        style="
-          justify-content: center;
-          align-items: center;
-          display: flex;
-          margin-top: 5%;
-        "
-      >
-        <div
+      <div class="relative isolate px-6 pt-14 lg:px-8" style="justify-content: center;align-items: center;display: flex;margin-top: 5%;">
+        <div 
           class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
         >
@@ -319,43 +309,39 @@
           ></div>
         </div>
         <div class="half-section">
-          <h1 class="toolheading" style="margin-top: 50px">
-            PDF to XML Converter
-          </h1>
-          <p class="description" style="margin-top: 30px">
-            A PDF to XML converter extracts data from PDF documents and converts
-            it into XML format, facilitating structured data storage,
-            integration, and retrieval for use in applications and data
-            processing systems.
-          </p>
+            <h1 class="toolheading" style="margin-top: 50px">
+              CSV TO PDF Converter
+            </h1>
+            <p class="description" style="margin-top: 30px">
+              Convert your PDF files to CSV format quickly and accurately with
+              our tool. Ideal for extracting tabular data and transforming it
+              into a usable spreadsheet format for analysis, reporting, and data
+              manipulation.
+            </p>
 
-          <div class="toolbox">
-            <label
-              for="fileInput"
-              style="
-                padding: 13px 30px;
-                border-radius: 50px;
-                background: black;
-                color: white;
-                cursor: pointer;
-              "
-              >Select File</label
-            >
+            <div class="toolbox">
+              <label
+                for="fileInput"
+                style="
+                  padding: 13px 30px;
+                  border-radius: 50px;
+                  background: black;
+                  color: white;
+                  cursor: pointer;
+                "
+                >Select File</label
+              >
+              
 
-            <button class="downloadbutton" id="convertButton" disabled>
-              Download XML
-            </button>
+              <button class="downloadbutton" id="convertButton">
+                Download PDF
+              </button>
 
-            <input
-              type="file"
-              id="fileInput"
-              accept="application/pdf"
-              style="display: none"
-            />
-            <div id="output"></div>
+              <input type="file" id="fileInput" accept=".csv" style="display: none;">
+ 
+             </div>
           </div>
-        </div>
-
+        
         <div
           class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
@@ -386,52 +372,79 @@
         </div>
       </div>
     </div>
+ 
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <!-- PDF-Lib library for creating PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
     <script>
-      const fileInput = document.getElementById("fileInput");
-      const convertButton = document.getElementById("convertButton");
-      const output = document.getElementById("output");
+        document.getElementById('convertButton').addEventListener('click', async function() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
 
-      let pdfDoc = null;
+            if (!file) {
+                alert('Please select a CSV file to convert.');
+                return;
+            }
 
-      fileInput.addEventListener("change", async (e) => {
-        const file = e.target.files[0];
-        if (file && file.type === "application/pdf") {
-          const fileReader = new FileReader();
-          fileReader.onload = async function () {
-            const typedarray = new Uint8Array(this.result);
-            pdfDoc = await pdfjsLib.getDocument(typedarray).promise;
-            convertButton.disabled = false;
-          };
-          fileReader.readAsArrayBuffer(file);
+            const reader = new FileReader();
+            reader.onload = async function(event) {
+                const csvContent = event.target.result;
+
+                // Parse CSV using PapaParse
+                const csvData = Papa.parse(csvContent, { header: false });
+                const dataArray = csvData.data;
+
+                // Create PDF
+                const pdfDoc = await PDFLib.PDFDocument.create();
+                const page = pdfDoc.addPage();
+                const { width, height } = page.getSize();
+                const fontSize = 10;
+                const textFont = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+
+                const margin = 50;
+                const cellWidth = (width - 2 * margin) / dataArray[0].length;
+                let y = height - 50; // Starting Y position
+
+                dataArray.forEach(row => {
+                    let x = margin; // Starting X position for each row
+                    row.forEach(cellText => {
+                        page.drawText(cellText.toString(), {
+                            x,
+                            y,
+                            size: fontSize,
+                            font: textFont,
+                            maxWidth: cellWidth - 5, // to avoid text overflow
+                        });
+                        x += cellWidth; // Move to next cell
+                    });
+                    y -= fontSize + 5; // Move down for the next row
+                });
+
+                const pdfBytes = await pdfDoc.save();
+                download(pdfBytes, 'converted.pdf', 'application/pdf');
+            };
+
+            reader.readAsText(file);
+        });
+
+        function download(data, filename, type) {
+            const blob = new Blob([data], { type: type });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
         }
-      });
-
-      convertButton.addEventListener("click", async () => {
-        if (pdfDoc) {
-          let xmlContent = '<?xml version="1.0" encoding="UTF-8"?>\n<pdf>\n';
-          for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-            const page = await pdfDoc.getPage(pageNum);
-            const textContent = await page.getTextContent();
-            xmlContent += `  <page number="${pageNum}">\n`;
-            textContent.items.forEach((item) => {
-              xmlContent += `    <text>${item.str}</text>\n`;
-            });
-            xmlContent += "  </page>\n";
-          }
-          xmlContent += "</pdf>";
-
-          const blob = new Blob([xmlContent], { type: "application/xml" });
-          const link = document.createElement("a");
-          link.href = URL.createObjectURL(blob);
-          link.download = "converted.pdf.xml";
-          link.click();
-        }
-      });
     </script>
   </body>
 </html>

@@ -19,13 +19,14 @@
       >
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <span
-            style="font-weight: bold"
             class="self-center text-3xl font-semibold whitespace-nowrap :text-white"
+            style="font-weight: bold"
             >VEx</span
           >
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
+            style="background: black !important"
             type="button"
             class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
           >
@@ -161,18 +162,19 @@
                       >PDF TO PNG</a
                     >
                   </li>
-                  <li>
-                    <a
-                      href="./pdftocsv.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO TEXT</a
-                    >
-                  </li>
+
                   <li>
                     <a
                       href="pdftoexcel.html"
                       class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
                       >PDF TO WORD</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pdftoxml.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO XML</a
                     >
                   </li>
                   <li>
@@ -187,6 +189,87 @@
                       href="./pdftohtml.html"
                       class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
                       >PDF TO WEBP</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./pdftotext.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PDF TO TEXT</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./csvto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >CSV TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./excelto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >EXCEL TO PDF
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./htmlto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >HTML TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./jpgto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >JPG TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./jsonto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >JSON TO PDF
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./pngto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >PNG TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./speechto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >SPEECH TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./textto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >TEXT TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./webpto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >WEBP TO PDF</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./xmlto.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >XML TO PDF</a
                     >
                   </li>
                 </ul>
@@ -240,10 +323,10 @@
             PDF to WORD Converter
           </h1>
           <p class="description" style="margin-top: 30px">
-            Convert your PDF files to CSV format quickly and accurately with our
-            tool. Ideal for extracting tabular data and transforming it into a
-            usable spreadsheet format for analysis, reporting, and data
-            manipulation.
+            A PDF to Word converter efficiently transforms PDF files into
+            editable Word documents, preserving formatting, text, and images,
+            enabling easy editing and updating of content within Microsoft Word
+            or other word processors.
           </p>
 
           <div class="toolbox">
@@ -274,8 +357,6 @@
               style="display: none"
             />
             <div id="error-message"></div>
-
-        
           </div>
         </div>
 
@@ -314,57 +395,66 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-<script>
-  async function convertToWord() {
-    var fileInput = document.getElementById('pdf-input');
-    var file = fileInput.files[0];
-    var errorMessage = document.getElementById('error-message');
-    
-    if (file) {
-      errorMessage.textContent = ''; // Reset error message
+    <script>
+      async function convertToWord() {
+        var fileInput = document.getElementById("pdf-input");
+        var file = fileInput.files[0];
+        var errorMessage = document.getElementById("error-message");
 
-      var reader = new FileReader();
-      reader.onload = async function(e) {
-        try {
-          var pdfData = new Uint8Array(e.target.result);
-          var pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
-          var text = "";
+        if (file) {
+          errorMessage.textContent = ""; // Reset error message
 
-          for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            var page = await pdf.getPage(pageNum);
-            var viewport = page.getViewport({ scale: 1.0 });
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-            await page.render({ canvasContext: context, viewport: viewport }).promise;
-            var imageData = canvas.toDataURL('image/jpeg', 1.0);
-            text += "<img src='" + imageData + "'><br>";
-          }
+          var reader = new FileReader();
+          reader.onload = async function (e) {
+            try {
+              var pdfData = new Uint8Array(e.target.result);
+              var pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+              var text = "";
 
-          // Create a Blob containing the HTML content
-          var htmlContent = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Converted Word Document</title></head><body><div>' + text + '</div></body></html>';
-          var blob = new Blob([htmlContent], { type: 'application/msword' });
-          var url = URL.createObjectURL(blob);
+              for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                var page = await pdf.getPage(pageNum);
+                var viewport = page.getViewport({ scale: 1.0 });
+                var canvas = document.createElement("canvas");
+                var context = canvas.getContext("2d");
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                await page.render({
+                  canvasContext: context,
+                  viewport: viewport,
+                }).promise;
+                var imageData = canvas.toDataURL("image/jpeg", 1.0);
+                text += "<img src='" + imageData + "'><br>";
+              }
 
-          // Create a link element to download the Word document
-          var link = document.createElement('a');
-          link.href = url;
-          link.download = 'output.doc';
-          link.click();
+              // Create a Blob containing the HTML content
+              var htmlContent =
+                '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Converted Word Document</title></head><body><div>' +
+                text +
+                "</div></body></html>";
+              var blob = new Blob([htmlContent], {
+                type: "application/msword",
+              });
+              var url = URL.createObjectURL(blob);
 
-          // Cleanup
-          URL.revokeObjectURL(url);
-        } catch (error) {
-          errorMessage.textContent = 'Conversion failed. Please try again later.';
-          console.error(error);
+              // Create a link element to download the Word document
+              var link = document.createElement("a");
+              link.href = url;
+              link.download = "output.doc";
+              link.click();
+
+              // Cleanup
+              URL.revokeObjectURL(url);
+            } catch (error) {
+              errorMessage.textContent =
+                "Conversion failed. Please try again later.";
+              console.error(error);
+            }
+          };
+          reader.readAsArrayBuffer(file);
+        } else {
+          errorMessage.textContent = "Please select a PDF file.";
         }
       }
-      reader.readAsArrayBuffer(file);
-    } else {
-      errorMessage.textContent = 'Please select a PDF file.';
-    }
-  }
-</script>
+    </script>
   </body>
 </html>

@@ -12,190 +12,273 @@
   </head>
   <body>
     <nav
-      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+  >
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <span
-            style="font-weight: bold"
-            class="self-center text-3xl font-semibold whitespace-nowrap :text-white"
-            >VEx</span
-          >
-        </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
-          >
-            <a href="./about.html"> Get started </a>
-          </button>
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div
-          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-sticky"
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span
+          class="self-center text-3xl font-semibold whitespace-nowrap :text-white"
+          style="font-weight: bold"
+          >VEx</span
         >
-          <ul
-            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button
+          style="background: black !important"
+          type="button"
+          class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
+        >
+          <a href="./about.html"> Get started </a>
+        </button>
+        <button
+          data-collapse-toggle="navbar-sticky"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
           >
-            <li>
-              <a
-                href="./index.html"
-                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
-                aria-current="page"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="./about.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
-                >About</a
-              >
-            </li>
-
-            <li>
-              <a
-                href="./contact.html"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <button
-                id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
-              >
-                ALL PDF TOOLS
-                <svg
-                  style="margin-top: 5px"
-                  class="w-2.5 h-2.5 ms-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownNavbar"
-                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
-              >
-                <ul
-                  class="py-2 text-sm text-gray-700 -:text-gray-400"
-                  aria-labelledby="dropdownLargeButton"
-                >
-                  <li>
-                    <a
-                      href="./pdftocsv.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO CSV</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="pdftoexcel.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO EXCEL</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftohtml.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO HTML</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftojpg.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO JPG</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftojson.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO JSON</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftopng.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO PNG</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftocsv.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO TEXT</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="pdftoexcel.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO WORD</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftohtml.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO ZIP</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pdftohtml.html"
-                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                      >PDF TO WEBP</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            ></path>
+          </svg>
+        </button>
       </div>
-    </nav>
+      <div
+        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        id="navbar-sticky"
+      >
+        <ul
+          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+        >
+          <li>
+            <a
+              href="./index.html"
+              class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="./about.html"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+              >About</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="./contact.html"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <button
+              id="dropdownNavbarLink"
+              data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+            >
+              ALL PDF TOOLS
+              <svg
+                style="margin-top: 5px"
+                class="w-2.5 h-2.5 ms-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownNavbar"
+              class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 -:text-gray-400"
+                aria-labelledby="dropdownLargeButton"
+              >
+                <li>
+                  <a
+                    href="./pdftocsv.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO CSV</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="pdftoexcel.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO EXCEL</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftohtml.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO HTML</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftojpg.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO JPG</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftojson.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO JSON</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftopng.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO PNG</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="pdftoexcel.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO WORD</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftoxml.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO XML</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftohtml.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO ZIP</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftohtml.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO WEBP</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="./pdftotext.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO TEXT</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="./csvto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >CSV TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./excelto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >EXCEL TO PDF
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="./htmlto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >HTML TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./jpgto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >JPG TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./jsonto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >JSON TO PDF
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="./pngto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PNG TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./speechto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >SPEECH TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./textto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >TEXT TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./webpto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >WEBP TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./xmlto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >XML TO PDF</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <div style="min-height: 100vh; overflow: hidden" class="bg-white">
       <div
@@ -240,10 +323,9 @@
             PDF to HTML Converter
           </h1>
           <p class="description" style="margin-top: 30px">
-            Convert your PDF files to CSV format quickly and accurately with our
-            tool. Ideal for extracting tabular data and transforming it into a
-            usable spreadsheet format for analysis, reporting, and data
-            manipulation.
+            A PDF to HTML converter is a tool that converts PDF documents into
+            HTML format, enabling seamless integration of content into websites
+            while preserving the original layout, images, and text for web use.
           </p>
 
           <div class="toolbox">
@@ -302,8 +384,11 @@
           ></div>
         </div>
       </div>
-      <div style="width: 90%;margin: auto;padding: 50px 20px;" id="htmlContent" contenteditable="true"></div>
-
+      <div
+        style="width: 90%; margin: auto; padding: 50px 20px"
+        id="htmlContent"
+        contenteditable="true"
+      ></div>
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>

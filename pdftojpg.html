@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF to JPG</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav
@@ -16,13 +18,15 @@
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span style="font-weight: bold;"
+        <span
           class="self-center text-3xl font-semibold whitespace-nowrap :text-white"
+          style="font-weight: bold"
           >VEx</span
         >
       </a>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <button
+          style="background: black !important"
           type="button"
           class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center"
         >
@@ -158,18 +162,19 @@
                     >PDF TO PNG</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="./pdftocsv.html"
-                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
-                    >PDF TO TEXT</a
-                  >
-                </li>
+
                 <li>
                   <a
                     href="pdftoexcel.html"
                     class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
                     >PDF TO WORD</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pdftoxml.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO XML</a
                   >
                 </li>
                 <li>
@@ -186,6 +191,87 @@
                     >PDF TO WEBP</a
                   >
                 </li>
+
+                <li>
+                  <a
+                    href="./pdftotext.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PDF TO TEXT</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="./csvto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >CSV TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./excelto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >EXCEL TO PDF
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="./htmlto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >HTML TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./jpgto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >JPG TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./jsonto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >JSON TO PDF
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="./pngto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >PNG TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./speechto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >SPEECH TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./textto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >TEXT TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./webpto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >WEBP TO PDF</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./xmlto.html"
+                    class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                    >XML TO PDF</a
+                  >
+                </li>
               </ul>
             </div>
           </li>
@@ -195,8 +281,16 @@
   </nav>
 
     <div style="min-height: 100vh; overflow: hidden" class="bg-white">
-      <div class="relative isolate px-6 pt-14 lg:px-8" style="justify-content: center;align-items: center;display: flex;margin-top: 5%;">
-        <div 
+      <div
+        class="relative isolate px-6 pt-14 lg:px-8"
+        style="
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          margin-top: 5%;
+        "
+      >
+        <div
           class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
         >
@@ -225,39 +319,42 @@
           ></div>
         </div>
         <div class="half-section">
-            <h1 class="toolheading" style="margin-top: 50px">
-              PDF to JPG Converter
-            </h1>
-            <p class="description" style="margin-top: 30px">
-              Convert your PDF files to CSV format quickly and accurately with
-              our tool. Ideal for extracting tabular data and transforming it
-              into a usable spreadsheet format for analysis, reporting, and data
-              manipulation.
-            </p>
+          <h1 class="toolheading" style="margin-top: 50px">
+            PDF to JPG Converter
+          </h1>
+          <p class="description" style="margin-top: 30px">
+            A PDF to JPG converter is a tool that converts PDF pages into
+            high-quality JPG images, making it easy to share, view, or edit
+            visual content without needing a PDF reader.
+          </p>
 
-            <div class="toolbox">
-              <label
-                for="fileInput"
-                style="
-                  padding: 13px 30px;
-                  border-radius: 50px;
-                  background: black;
-                  color: white;
-                  cursor: pointer;
-                "
-                >Select File</label
-              >
-              
+          <div class="toolbox">
+            <label
+              for="fileInput"
+              style="
+                padding: 13px 30px;
+                border-radius: 50px;
+                background: black;
+                color: white;
+                cursor: pointer;
+              "
+              >Select File</label
+            >
 
-              <button class="downloadbutton" id="convertButton" disabled>
-                Download JPG
-              </button>
+            <button class="downloadbutton" id="convertButton" disabled>
+              Download JPG
+            </button>
 
-              <input type="file" id="fileInput" accept="application/pdf" style="display: none;">
-               <div id="output"></div>
-            </div>
+            <input
+              type="file"
+              id="fileInput"
+              accept="application/pdf"
+              style="display: none"
+            />
+            <div id="output"></div>
           </div>
-        
+        </div>
+
         <div
           class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
@@ -288,56 +385,55 @@
         </div>
       </div>
     </div>
- 
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        const fileInput = document.getElementById('fileInput');
-        const convertButton = document.getElementById('convertButton');
-        const output = document.getElementById('output');
+      const fileInput = document.getElementById("fileInput");
+      const convertButton = document.getElementById("convertButton");
+      const output = document.getElementById("output");
 
-        let pdfDoc = null;
+      let pdfDoc = null;
 
-        fileInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (file && file.type === 'application/pdf') {
-                const fileReader = new FileReader();
-                fileReader.onload = async function() {
-                    const typedarray = new Uint8Array(this.result);
-                    pdfDoc = await pdfjsLib.getDocument(typedarray).promise;
-                    convertButton.disabled = false;
-                };
-                fileReader.readAsArrayBuffer(file);
-            }
-        });
+      fileInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (file && file.type === "application/pdf") {
+          const fileReader = new FileReader();
+          fileReader.onload = async function () {
+            const typedarray = new Uint8Array(this.result);
+            pdfDoc = await pdfjsLib.getDocument(typedarray).promise;
+            convertButton.disabled = false;
+          };
+          fileReader.readAsArrayBuffer(file);
+        }
+      });
 
-        convertButton.addEventListener('click', async () => {
-            if (pdfDoc) {
-                output.innerHTML = '';
-                for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-                    const page = await pdfDoc.getPage(pageNum);
-                    const viewport = page.getViewport({ scale: 4 });
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+      convertButton.addEventListener("click", async () => {
+        if (pdfDoc) {
+          output.innerHTML = "";
+          for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale: 4 });
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
 
-                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+            await page.render({ canvasContext: context, viewport: viewport })
+              .promise;
 
-                    const imageUrl = canvas.toDataURL('image/jpeg');
+            const imageUrl = canvas.toDataURL("image/jpeg");
 
-                    const link = document.createElement('a');
-                    link.href = imageUrl;
-                    link.download = `page-${pageNum}.jpg`;
-                    link.click();
-                }
-            }
-        });
+            const link = document.createElement("a");
+            link.href = imageUrl;
+            link.download = `page-${pageNum}.jpg`;
+            link.click();
+          }
+        }
+      });
     </script>
   </body>
 </html>
