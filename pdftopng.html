@@ -21,7 +21,7 @@
         <span
           class="self-center text-3xl font-semibold whitespace-nowrap :text-white"
           style="font-weight: bold"
-          >VEx</span
+          >PDF</span
         >
       </a>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -417,7 +417,7 @@
             const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
             const page = await pdf.getPage(1); // Get the first page
 
-            const scale = 3; // Increase scale for better quality
+            const scale = 20; // Increase scale for better quality
             const viewport = page.getViewport({ scale: scale });
             const canvas = document.createElement("canvas");
             canvas.width = viewport.width;
